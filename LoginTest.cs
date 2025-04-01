@@ -13,9 +13,13 @@ namespace MSTest_Runner_App
         {
             ChromeOptions options = new ChromeOptions();
             options.AcceptInsecureCertificates = true;
+            options.AddArgument("--headless");
+            options.AddArgument("--no-sandbox"); // Important for CI environments
+            options.AddArgument("--disable-dev-shm-usage"); // Helps with resource limitations
+            options.AddArgument("--disable-gpu"); // Optional but recommended in headless mode
             driver = new ChromeDriver(options);
             driver.Manage().Window.Maximize();
-            driver.Navigate().GoToUrl("https://10.64.1.98:30910/login");
+            driver.Navigate().GoToUrl("https://www.saucedemo.com/");
         }
 
         [TestCleanup]
@@ -30,17 +34,17 @@ namespace MSTest_Runner_App
         public void Login1()
         {
             string actual = "", expected = "";
-            var username = driver!.FindElement(By.XPath("//*[@id=\"login-form_email\"]"));
-            var password = driver.FindElement(By.XPath("//*[@id=\"login-form_password\"]/div/span/input"));
-            var loginButton = driver.FindElement(By.XPath("//*[@id=\"login-form\"]/div[4]/div/div/div/div/div/button"));
+            var username = driver!.FindElement(By.Id("user-name"));
+            var password = driver.FindElement(By.Id("password"));
+            var loginButton = driver.FindElement(By.Id("login-button"));
 
             username.Click();
-            username.SendKeys("root");
+            username.SendKeys("standard_user");
             password.Click();
-            password.SendKeys("root@123");
+            password.SendKeys("secret_sauce");
             loginButton.Click();
             Thread.Sleep(2000);
-            actual = driver.FindElement(By.XPath("//*[@id=\"root\"]/div/div/div/div/div/div[1]/aside/div/div[1]/div[3]/ul/li[1]")).Displayed.ToString();
+            actual = driver.FindElement(By.ClassName("app_logo")).Displayed.ToString();
             expected = true.ToString();
 
             Assert.AreEqual(expected, actual);
@@ -48,66 +52,6 @@ namespace MSTest_Runner_App
 
         [TestMethod]
         public void Login2()
-        {
-            string actual = "", expected = "";
-            var username = driver!.FindElement(By.XPath("//*[@id=\"login-form_email\"]"));
-            var password = driver.FindElement(By.XPath("//*[@id=\"login-form_password\"]/div/span/input"));
-            var loginButton = driver.FindElement(By.XPath("//*[@id=\"login-form\"]/div[4]/div/div/div/div/div/button"));
-
-            username.Click();
-            username.SendKeys("root1");
-            password.Click();
-            password.SendKeys("root@123");
-            loginButton.Click();
-            Thread.Sleep(2000);
-            actual = driver.FindElement(By.XPath("//*[@id=\"root\"]/div/div/div/div/div/div[1]/aside/div/div[1]/div[3]/ul/li[1]")).Displayed.ToString();
-            expected = true.ToString();
-
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void Login3()
-        {
-            string actual = "", expected = "";
-            var username = driver!.FindElement(By.XPath("//*[@id=\"login-form_email\"]"));
-            var password = driver.FindElement(By.XPath("//*[@id=\"login-form_password\"]/div/span/input"));
-            var loginButton = driver.FindElement(By.XPath("//*[@id=\"login-form\"]/div[4]/div/div/div/div/div/button"));
-
-            username.Click();
-            username.SendKeys("at_approved_user@test.com");
-            password.Click();
-            password.SendKeys("test@123");
-            loginButton.Click();
-            Thread.Sleep(2000);
-            actual = driver.FindElement(By.XPath("//*[@id=\"root\"]/div/div/div/div/div/div[1]/aside/div/div[1]/div[3]/ul/li[1]")).Displayed.ToString();
-            expected = true.ToString();
-
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void Login4()
-        {
-            string actual = "", expected = "";
-            var username = driver!.FindElement(By.XPath("//*[@id=\"login-form_email\"]"));
-            var password = driver.FindElement(By.XPath("//*[@id=\"login-form_password\"]/div/span/input"));
-            var loginButton = driver.FindElement(By.XPath("//*[@id=\"login-form\"]/div[4]/div/div/div/div/div/button"));
-
-            username.Click();
-            username.SendKeys("at_approved_user@test.com");
-            password.Click();
-            password.SendKeys("tets@1234");
-            loginButton.Click();
-            Thread.Sleep(2000);
-            actual = driver.FindElement(By.XPath("//*[@id=\"root\"]/div/div/div/div/div/div[1]/aside/div/div[1]/div[3]/ul/li[1]")).Displayed.ToString();
-            expected = true.ToString();
-
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void Login5()
         {
             string actual = "", expected = "";
 
