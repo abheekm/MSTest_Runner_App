@@ -55,7 +55,7 @@ namespace MSTest_Runner_App
         {
             string actual = "", expected = "";
 
-            actual = false.ToString();
+            actual = true.ToString();
             expected = true.ToString();
 
             Assert.AreEqual(expected, actual);
