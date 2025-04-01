@@ -13,6 +13,10 @@ namespace MSTest_Runner_App
         {
             ChromeOptions options = new ChromeOptions();
             options.AcceptInsecureCertificates = true;
+            options.AddArgument("--headless");
+            options.AddArgument("--no-sandbox"); // Important for CI environments
+            options.AddArgument("--disable-dev-shm-usage"); // Helps with resource limitations
+            options.AddArgument("--disable-gpu"); // Optional but recommended in headless mode
             driver = new ChromeDriver(options);
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl("https://10.64.1.98:30910/login");
