@@ -31,7 +31,7 @@ namespace MSTest_Runner_App
         {
             string actual = "", expected = "";
             var username = driver!.FindElement(By.XPath("//*[@id=\"login-form_email\"]"));
-            var password = driver.FindElement(By.XPath("//*[@id=\"login-form_password\"]/div/span/input"));
+            var password = driver.FindElement(By.XPath("//*[@id=\"login-form_password\"]"));
             var loginButton = driver.FindElement(By.XPath("//*[@id=\"login-form\"]/div[4]/div/div/div/div/div/button"));
 
             username.Click();
@@ -51,7 +51,7 @@ namespace MSTest_Runner_App
         {
             string actual = "", expected = "";
             var username = driver!.FindElement(By.XPath("//*[@id=\"login-form_email\"]"));
-            var password = driver.FindElement(By.XPath("//*[@id=\"login-form_password\"]/div/span/input"));
+            var password = driver.FindElement(By.XPath("//*[@id=\"login-form_password\"]"));
             var loginButton = driver.FindElement(By.XPath("//*[@id=\"login-form\"]/div[4]/div/div/div/div/div/button"));
 
             username.Click();
@@ -71,7 +71,7 @@ namespace MSTest_Runner_App
         {
             string actual = "", expected = "";
             var username = driver!.FindElement(By.XPath("//*[@id=\"login-form_email\"]"));
-            var password = driver.FindElement(By.XPath("//*[@id=\"login-form_password\"]/div/span/input"));
+            var password = driver.FindElement(By.XPath("//*[@id=\"login-form_password\"]"));
             var loginButton = driver.FindElement(By.XPath("//*[@id=\"login-form\"]/div[4]/div/div/div/div/div/button"));
 
             username.Click();
@@ -91,7 +91,7 @@ namespace MSTest_Runner_App
         {
             string actual = "", expected = "";
             var username = driver!.FindElement(By.XPath("//*[@id=\"login-form_email\"]"));
-            var password = driver.FindElement(By.XPath("//*[@id=\"login-form_password\"]/div/span/input"));
+            var password = driver.FindElement(By.XPath("//*[@id=\"login-form_password\"]"));
             var loginButton = driver.FindElement(By.XPath("//*[@id=\"login-form\"]/div[4]/div/div/div/div/div/button"));
 
             username.Click();
@@ -138,7 +138,7 @@ namespace MSTest_Runner_App
         public void Login7()
         {
             string actual = "", expected = "";
-            var password = driver!.FindElement(By.XPath("//*[@id=\"login-form_password\"]/div/span/input"));
+            var password = driver.FindElement(By.XPath("//*[@id=\"login-form_password\"]"));
             var loginButton = driver.FindElement(By.XPath("//*[@id=\"login-form\"]/div[4]/div/div/div/div/div/button"));
 
             password.Click();
@@ -156,7 +156,7 @@ namespace MSTest_Runner_App
         {
             string actual = "", expected = "";
             var username = driver!.FindElement(By.XPath("//*[@id=\"login-form_email\"]"));
-            var password = driver.FindElement(By.XPath("//*[@id=\"login-form_password\"]/div/span/input"));
+            var password = driver.FindElement(By.XPath("//*[@id=\"login-form_password\"]"));
             var loginButton = driver.FindElement(By.XPath("//*[@id=\"login-form\"]/div[4]/div/div/div/div/div/button"));
 
             username.Click();
@@ -176,7 +176,7 @@ namespace MSTest_Runner_App
         {
             string actual = "", expected = "";
             var username = driver!.FindElement(By.XPath("//*[@id=\"login-form_email\"]"));
-            var password = driver.FindElement(By.XPath("//*[@id=\"login-form_password\"]/div/span/input"));
+            var password = driver.FindElement(By.XPath("//*[@id=\"login-form_password\"]"));
             var loginButton = driver.FindElement(By.XPath("//*[@id=\"login-form\"]/div[4]/div/div/div/div/div/button"));
 
             username.Click();
@@ -196,7 +196,7 @@ namespace MSTest_Runner_App
         {
             string actual = "", expected = "";
             var username = driver!.FindElement(By.XPath("//*[@id=\"login-form_email\"]"));
-            var password = driver.FindElement(By.XPath("//*[@id=\"login-form_password\"]/div/span/input"));
+            var password = driver.FindElement(By.XPath("//*[@id=\"login-form_password\"]"));
             var loginButton = driver.FindElement(By.XPath("//*[@id=\"login-form\"]/div[4]/div/div/div/div/div/button"));
 
             username.Click();
