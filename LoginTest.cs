@@ -34,9 +34,9 @@ namespace MSTest_Runner_App
         public void Login1()
         {
             string actual = "", expected = "";
-            var username = driver!.FindElement(By.XPath("//*[@id=\"login-form_email\"]"));
-            var password = driver.FindElement(By.XPath("//*[@id=\"login-form_password\"]"));
-            var loginButton = driver.FindElement(By.XPath("//*[@id=\"login-form\"]/div[4]/div/div/div/div/div/button"));
+            var username = driver!.FindElement(By.Id("login-form_email"));
+            var password = driver.FindElement(By.Id("login-form_password"));
+            var loginButton = driver.FindElement(By.ClassName("login-btn"));
 
             username.Click();
             username.SendKeys("root");
@@ -44,7 +44,7 @@ namespace MSTest_Runner_App
             password.SendKeys("root@123");
             loginButton.Click();
             Thread.Sleep(2000);
-            actual = driver.FindElement(By.XPath("//*[@id=\"root\"]/div/div/div/div/div/div[1]/aside/div/div[1]/div[3]/ul/li[1]")).Displayed.ToString();
+            actual = driver.FindElement(By.ClassName("bn-sidebar-menu")).Displayed.ToString();
             expected = true.ToString();
 
             Assert.AreEqual(expected, actual);
@@ -54,9 +54,9 @@ namespace MSTest_Runner_App
         public void Login2()
         {
             string actual = "", expected = "";
-            var username = driver!.FindElement(By.XPath("//*[@id=\"login-form_email\"]"));
-            var password = driver.FindElement(By.XPath("//*[@id=\"login-form_password\"]"));
-            var loginButton = driver.FindElement(By.XPath("//*[@id=\"login-form\"]/div[4]/div/div/div/div/div/button"));
+            var username = driver!.FindElement(By.Id("login-form_email"));
+            var password = driver.FindElement(By.Id("login-form_password"));
+            var loginButton = driver.FindElement(By.ClassName("login-btn"));
 
             username.Click();
             username.SendKeys("root1");
@@ -64,7 +64,7 @@ namespace MSTest_Runner_App
             password.SendKeys("root@123");
             loginButton.Click();
             Thread.Sleep(2000);
-            actual = driver.FindElement(By.XPath("//*[@id=\"root\"]/div/div/div/div/div/div[1]/aside/div/div[1]/div[3]/ul/li[1]")).Displayed.ToString();
+            actual = driver.FindElement(By.ClassName("bn-sidebar-menu")).Displayed.ToString();
             expected = true.ToString();
 
             Assert.AreEqual(expected, actual);
@@ -74,9 +74,9 @@ namespace MSTest_Runner_App
         public void Login3()
         {
             string actual = "", expected = "";
-            var username = driver!.FindElement(By.XPath("//*[@id=\"login-form_email\"]"));
-            var password = driver.FindElement(By.XPath("//*[@id=\"login-form_password\"]"));
-            var loginButton = driver.FindElement(By.XPath("//*[@id=\"login-form\"]/div[4]/div/div/div/div/div/button"));
+            var username = driver!.FindElement(By.Id("login-form_email"));
+            var password = driver.FindElement(By.Id("login-form_password"));
+            var loginButton = driver.FindElement(By.ClassName("login-btn"));
 
             username.Click();
             username.SendKeys("at_approved_user@test.com");
@@ -84,7 +84,7 @@ namespace MSTest_Runner_App
             password.SendKeys("test@123");
             loginButton.Click();
             Thread.Sleep(2000);
-            actual = driver.FindElement(By.XPath("//*[@id=\"root\"]/div/div/div/div/div/div[1]/aside/div/div[1]/div[3]/ul/li[1]")).Displayed.ToString();
+            actual = driver.FindElement(By.ClassName("bn-sidebar-menu")).Displayed.ToString();
             expected = true.ToString();
 
             Assert.AreEqual(expected, actual);
@@ -94,9 +94,9 @@ namespace MSTest_Runner_App
         public void Login4()
         {
             string actual = "", expected = "";
-            var username = driver!.FindElement(By.XPath("//*[@id=\"login-form_email\"]"));
-            var password = driver.FindElement(By.XPath("//*[@id=\"login-form_password\"]"));
-            var loginButton = driver.FindElement(By.XPath("//*[@id=\"login-form\"]/div[4]/div/div/div/div/div/button"));
+            var username = driver!.FindElement(By.Id("login-form_email"));
+            var password = driver.FindElement(By.Id("login-form_password"));
+            var loginButton = driver.FindElement(By.ClassName("login-btn"));
 
             username.Click();
             username.SendKeys("at_approved_user@test.com");
@@ -104,7 +104,7 @@ namespace MSTest_Runner_App
             password.SendKeys("tets@1234");
             loginButton.Click();
             Thread.Sleep(2000);
-            actual = driver.FindElement(By.XPath("//*[@id=\"root\"]/div/div/div/div/div/div[1]/aside/div/div[1]/div[3]/ul/li[1]")).Displayed.ToString();
+            actual = driver.FindElement(By.ClassName("bn-sidebar-menu")).Displayed.ToString();
             expected = true.ToString();
 
             Assert.AreEqual(expected, actual);
@@ -125,8 +125,8 @@ namespace MSTest_Runner_App
         public void Login6()
         {
             string actual = "", expected = "";
-            var username = driver!.FindElement(By.XPath("//*[@id=\"login-form_email\"]"));
-            var loginButton = driver.FindElement(By.XPath("//*[@id=\"login-form\"]/div[4]/div/div/div/div/div/button"));
+            var username = driver!.FindElement(By.Id("login-form_email"));
+            var loginButton = driver.FindElement(By.ClassName("login-btn"));
 
             username.Click();
             username.SendKeys("root");
@@ -142,8 +142,8 @@ namespace MSTest_Runner_App
         public void Login7()
         {
             string actual = "", expected = "";
-            var password = driver.FindElement(By.XPath("//*[@id=\"login-form_password\"]"));
-            var loginButton = driver.FindElement(By.XPath("//*[@id=\"login-form\"]/div[4]/div/div/div/div/div/button"));
+            var password = driver.FindElement(By.Id("login-form_password"));
+            var loginButton = driver.FindElement(By.ClassName("login-btn"));
 
             password.Click();
             password.SendKeys("root@123");
@@ -159,9 +159,9 @@ namespace MSTest_Runner_App
         public void Login8()
         {
             string actual = "", expected = "";
-            var username = driver!.FindElement(By.XPath("//*[@id=\"login-form_email\"]"));
-            var password = driver.FindElement(By.XPath("//*[@id=\"login-form_password\"]"));
-            var loginButton = driver.FindElement(By.XPath("//*[@id=\"login-form\"]/div[4]/div/div/div/div/div/button"));
+            var username = driver!.FindElement(By.Id("login-form_email"));
+            var password = driver.FindElement(By.Id("login-form_password"));
+            var loginButton = driver.FindElement(By.ClassName("login-btn"));
 
             username.Click();
             username.SendKeys("root");
@@ -169,7 +169,7 @@ namespace MSTest_Runner_App
             password.SendKeys("root@123");
             loginButton.Click();
             Thread.Sleep(2000);
-            actual = driver.FindElement(By.XPath("//*[@id=\"root\"]/div/div/div/div/div/div[1]/aside/div/div[1]/div[3]/ul/li[1]")).Displayed.ToString();
+            actual = driver.FindElement(By.ClassName("bn-sidebar-menu")).Displayed.ToString();
             expected = true.ToString();
 
             Assert.AreEqual(expected, actual);
@@ -179,9 +179,9 @@ namespace MSTest_Runner_App
         public void Login9()
         {
             string actual = "", expected = "";
-            var username = driver!.FindElement(By.XPath("//*[@id=\"login-form_email\"]"));
-            var password = driver.FindElement(By.XPath("//*[@id=\"login-form_password\"]"));
-            var loginButton = driver.FindElement(By.XPath("//*[@id=\"login-form\"]/div[4]/div/div/div/div/div/button"));
+            var username = driver!.FindElement(By.Id("login-form_email"));
+            var password = driver.FindElement(By.Id("login-form_password"));
+            var loginButton = driver.FindElement(By.ClassName("login-btn"));
 
             username.Click();
             username.SendKeys("root");
@@ -189,7 +189,7 @@ namespace MSTest_Runner_App
             password.SendKeys("root@123");
             loginButton.Click();
             Thread.Sleep(2000);
-            actual = driver.FindElement(By.XPath("//*[@id=\"root\"]/div/div/div/div/div/div[1]/aside/div/div[1]/div[3]/ul/li[1]")).Displayed.ToString();
+            actual = driver.FindElement(By.ClassName("bn-sidebar-menu")).Displayed.ToString();
             expected = true.ToString();
 
             Assert.AreEqual(expected, actual);
@@ -199,9 +199,9 @@ namespace MSTest_Runner_App
         public void Login10()
         {
             string actual = "", expected = "";
-            var username = driver!.FindElement(By.XPath("//*[@id=\"login-form_email\"]"));
-            var password = driver.FindElement(By.XPath("//*[@id=\"login-form_password\"]"));
-            var loginButton = driver.FindElement(By.XPath("//*[@id=\"login-form\"]/div[4]/div/div/div/div/div/button"));
+            var username = driver!.FindElement(By.Id("login-form_email"));
+            var password = driver.FindElement(By.Id("login-form_password"));
+            var loginButton = driver.FindElement(By.ClassName("login-btn"));
 
             username.Click();
             username.SendKeys("root");
@@ -209,7 +209,7 @@ namespace MSTest_Runner_App
             password.SendKeys("root@123");
             loginButton.Click();
             Thread.Sleep(2000);
-            actual = driver.FindElement(By.XPath("//*[@id=\"root\"]/div/div/div/div/div/div[1]/aside/div/div[1]/div[3]/ul/li[1]")).Displayed.ToString();
+            actual = driver.FindElement(By.ClassName("bn-sidebar-menu")).Displayed.ToString();
             expected = true.ToString();
 
             Assert.AreEqual(expected, actual);
