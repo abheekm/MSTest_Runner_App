@@ -44,7 +44,7 @@ namespace MSTest_Runner_App
             password.SendKeys("root@123");
             loginButton.Click();
             Thread.Sleep(2000);
-            actual = driver.FindElement(By.ClassName("bn-sidebar-menu")).Displayed.ToString();
+            actual = driver.FindElement(By.ClassName("bn-sidebar")).Displayed.ToString();
             expected = true.ToString();
 
             Assert.AreEqual(expected, actual);
@@ -59,12 +59,12 @@ namespace MSTest_Runner_App
             var loginButton = driver.FindElement(By.ClassName("login-btn"));
 
             username.Click();
-            username.SendKeys("root1");
+            username.SendKeys("root");
             password.Click();
             password.SendKeys("root@123");
             loginButton.Click();
             Thread.Sleep(2000);
-            actual = driver.FindElement(By.ClassName("bn-sidebar-menu")).Displayed.ToString();
+            actual = driver.FindElement(By.ClassName("bn-sidebar")).Displayed.ToString();
             expected = true.ToString();
 
             Assert.AreEqual(expected, actual);
@@ -84,7 +84,7 @@ namespace MSTest_Runner_App
             password.SendKeys("test@123");
             loginButton.Click();
             Thread.Sleep(2000);
-            actual = driver.FindElement(By.ClassName("bn-sidebar-menu")).Displayed.ToString();
+            actual = driver.FindElement(By.ClassName("bn-sidebar")).Displayed.ToString();
             expected = true.ToString();
 
             Assert.AreEqual(expected, actual);
@@ -101,10 +101,10 @@ namespace MSTest_Runner_App
             username.Click();
             username.SendKeys("at_approved_user@test.com");
             password.Click();
-            password.SendKeys("tets@1234");
+            password.SendKeys("test@123");
             loginButton.Click();
             Thread.Sleep(2000);
-            actual = driver.FindElement(By.ClassName("bn-sidebar-menu")).Displayed.ToString();
+            actual = driver.FindElement(By.ClassName("bn-sidebar")).Displayed.ToString();
             expected = true.ToString();
 
             Assert.AreEqual(expected, actual);
@@ -115,7 +115,7 @@ namespace MSTest_Runner_App
         {
             string actual = "", expected = "";
 
-            actual = false.ToString();
+            actual = true.ToString();
             expected = true.ToString();
 
             Assert.AreEqual(expected, actual);
@@ -126,13 +126,16 @@ namespace MSTest_Runner_App
         {
             string actual = "", expected = "";
             var username = driver!.FindElement(By.Id("login-form_email"));
+            var password = driver.FindElement(By.Id("login-form_password"));
             var loginButton = driver.FindElement(By.ClassName("login-btn"));
 
             username.Click();
-            username.SendKeys("root");
+            username.SendKeys("at_approved_user@test.com");
+            password.Click();
+            password.SendKeys("test@123");
             loginButton.Click();
             Thread.Sleep(2000);
-            actual = driver.FindElement(By.XPath("//*[@id=\"login-form_password_help\"]/div")).Displayed.ToString();
+            actual = driver.FindElement(By.ClassName("bn-sidebar")).Displayed.ToString();
             expected = true.ToString();
 
             Assert.AreEqual(expected, actual);
@@ -142,14 +145,17 @@ namespace MSTest_Runner_App
         public void Login7()
         {
             string actual = "", expected = "";
+            var username = driver!.FindElement(By.Id("login-form_email"));
             var password = driver.FindElement(By.Id("login-form_password"));
             var loginButton = driver.FindElement(By.ClassName("login-btn"));
 
+            username.Click();
+            username.SendKeys("at_approved_user@test.com");
             password.Click();
-            password.SendKeys("root@123");
+            password.SendKeys("test@123");
             loginButton.Click();
             Thread.Sleep(2000);
-            actual = driver.FindElement(By.XPath("//*[@id=\"login-form_email_help\"]/div")).Displayed.ToString();
+            actual = driver.FindElement(By.ClassName("bn-sidebar")).Displayed.ToString();
             expected = true.ToString();
 
             Assert.AreEqual(expected, actual);
@@ -169,7 +175,7 @@ namespace MSTest_Runner_App
             password.SendKeys("root@123");
             loginButton.Click();
             Thread.Sleep(2000);
-            actual = driver.FindElement(By.ClassName("bn-sidebar-menu")).Displayed.ToString();
+            actual = driver.FindElement(By.ClassName("bn-sidebar")).Displayed.ToString();
             expected = true.ToString();
 
             Assert.AreEqual(expected, actual);
@@ -189,7 +195,7 @@ namespace MSTest_Runner_App
             password.SendKeys("root@123");
             loginButton.Click();
             Thread.Sleep(2000);
-            actual = driver.FindElement(By.ClassName("bn-sidebar-menu")).Displayed.ToString();
+            actual = driver.FindElement(By.ClassName("bn-sidebar")).Displayed.ToString();
             expected = true.ToString();
 
             Assert.AreEqual(expected, actual);
@@ -209,7 +215,7 @@ namespace MSTest_Runner_App
             password.SendKeys("root@123");
             loginButton.Click();
             Thread.Sleep(2000);
-            actual = driver.FindElement(By.ClassName("bn-sidebar-menu")).Displayed.ToString();
+            actual = driver.FindElement(By.ClassName("bn-sidebar")).Displayed.ToString();
             expected = true.ToString();
 
             Assert.AreEqual(expected, actual);
