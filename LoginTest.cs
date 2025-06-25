@@ -54,9 +54,40 @@ namespace MSTest_Runner_App
         public void Login2()
         {
             string actual = "", expected = "";
+            var username = driver!.FindElement(By.Id("user-name"));
+            var password = driver.FindElement(By.Id("password"));
+            var loginButton = driver.FindElement(By.Id("login-button"));
+
+            username.Click();
+            username.SendKeys("standard_user");
+            password.Click();
+            password.SendKeys("secret_sauce");
+            loginButton.Click();
+            Thread.Sleep(2000);
+            actual = driver.FindElement(By.ClassName("app_logo")).Displayed.ToString();
+            expected = true.ToString();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Login3()
+        {
+            string actual = "", expected = "";
 
             actual = true.ToString();
-            expected = true.ToString();
+            expected = false.ToString();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Login4()
+        {
+            string actual = "", expected = "";
+
+            actual = true.ToString();
+            expected = false.ToString();
 
             Assert.AreEqual(expected, actual);
         }
